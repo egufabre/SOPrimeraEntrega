@@ -15,6 +15,7 @@ else
     read -p "Desea agregarlo a un grupo existente? Esto puede realizarse luego Y/n_:     "  OPCION
     case $OPCION in
     Y|y) 
+        cut -d':' -f1 /etc/group | column -c 80
         echo
         read -p "Ingrese el nombre del grupo_:" NAME
         Group=$NAME
