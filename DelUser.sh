@@ -9,4 +9,4 @@ then
     echo Usuario Eliminado con exito!
 else
     echo El usuario no existe 
-
+fi
