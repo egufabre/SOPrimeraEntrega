@@ -1,7 +1,25 @@
 #!/usr/bin/env bash
 #
+
+#-------------------------- VARIABLES ------------------------------
+
+
+F=4
+CantidadErrores=1
+
+
+
+
+
+
 # -------------------------------------------------------------------------- #
-        clear
+       
+
+
+
+
+
+	clear
 
         echo ""
 
@@ -27,7 +45,7 @@
 
                         1)
                         
-                        ./MenuUsuario.sh
+                        ./MenuUsuarios.sh
                                         ;;
 
                         2)
@@ -37,9 +55,10 @@
 			       
 			q|Q) exit      ;;
 
-                        *) echo -e "${ROJO}\t Opcion inválida! "
+                        *)
 
-                        echo ""
-
+			echo -e "\t Opcion Incorrecta! "
+			sleep 1
+			./MenuPrincipal.sh
         esac
 					
