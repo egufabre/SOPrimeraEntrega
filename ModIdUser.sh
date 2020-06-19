@@ -1,5 +1,8 @@
 #!/bin/bash
 #-------------------------- VARIABLES ------------------------------
+FECHA=
+HORA=
+USUARIO=
 F=4
 CantidadErrores=1
 #-------------------------------------------------------------------
@@ -18,7 +21,12 @@ then
         if sudo usermod -u $ID $UserName
         then 
             echo "Cambio de Id exitoso!"
-		F=3
+	
+	    FECHA=$(date +'%A %d de %B de %Y')
+	    HORA=$(date +%T)
+	    USUARIO=$(whoami)
+	    echo "$USUARIO modifico el ID del usuario $UserName el $FECHA a las $HORA hs" >> log.txt	    
+	    F=3
         else
             echo "Error cambiando Id :("
 		CantidadErrores=$((CantidadErrores+1))

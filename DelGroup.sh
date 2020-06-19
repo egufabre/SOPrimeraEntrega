@@ -2,7 +2,9 @@
 
 #-------------------------- VARIABLES ------------------------------
 
-
+FECHA=$(date +'%A %d de %B de %Y')
+HORA=$(date +%T)
+USUARIO=$(whoami)
 F=4
 NombreGrupo=
 CantidadErrores=1
@@ -24,6 +26,12 @@ then
         echo -e""
         echo -e "El nombre del grupo fue eliminado exitosamente"
         sleep 2
+	FECHA=$(date +'%A %d de %B de %Y')
+	HORA=$(date +%T)
+	USUARIO=$(whoami)
+	echo "$USUARIO elimino el grupo $NombreGrupo el $FECHA a las $HORA hs" >> log.txt
+
+
         F=3
 else
        	echo "El grupo $NombreGrupo no existe"

@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 #-------------------------- VARIABLES ------------------------------
-
-
+FECHA=
+HORA=
+USUARIO=
 F=4
 NombreGrupo=
 CantidadErrores=1
@@ -35,6 +36,14 @@ else
 	clear
 	echo -e""
 	echo -e "Grupo $NombreGrupo creado exitosamente"
+	FECHA=$(date +'%A %d de %B de %Y')
+	HORA=$(date +%T)
+	USUARIO=$(whoami)
+
+
+
+	echo "El usuario $USUARIO creo el grupo $NombreGrupo el $FECHA a las $HORA hs" >> log.txt
+
 	sleep 2
 	F=3
 	fi

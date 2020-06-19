@@ -2,7 +2,9 @@
 
 #-------------------------- VARIABLES ------------------------------
 
-
+FECHA=
+HORA=
+USUARIO=
 F=4
 NombreGrupo=
 NuevoNombre=
@@ -26,7 +28,12 @@ then
         clear
         echo -e""
         echo -e "El nombre del grupo fue cambiado exitosamente"
-        sleep 2
+        FECHA=$(date +'%A %d de %B de %Y')
+        HORA=$(date +%T)
+        USUARIO=$(whoami)
+	echo "$USUARIO cambio el nombre de grupo $NombreGruop a $NuevoNombre el $FECHA a las $HORA hs" >> log.txt
+
+	sleep 2
         F=3
 else
 

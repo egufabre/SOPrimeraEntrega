@@ -1,7 +1,9 @@
 #!/bin/bash
 
 #-------------------------- VARIABLES ------------------------------
-
+FECHA=
+HORA=
+USUARIO=
 F=4
 CantidadErrores=1
 #-------------------------------------------------------------------
@@ -48,6 +50,12 @@ else
                 if sudo passwd -q $UserName
                 then
                     echo Usuario Creado Exitosamente!
+		    FECHA=$(date +'%A %d de %B de %Y')
+		    HORA=$(date +%T)
+		    USUARIO=$(whoami)
+		    echo "$USUARIO creo el usuario $UserName en el grupo $Group el $FECHA a las $HORA hs" >> log.txt
+
+
                 else   
                     echo Error al asignar contraseña
                 fi
@@ -85,6 +93,11 @@ else
         if sudo passwd -q $UserName
         then
             echo Usuario creado con exito!
+	    FECHA=$(date +'%A %d de %B de %Y')
+                    HORA=$(date +%T)
+                    USUARIO=$(whoami)
+                    echo "$USUARIO creo el usuario $UserName el $FECHA a las $HORA hs" >> log.txt
+
         else
             echo Error al asignar password
         fi

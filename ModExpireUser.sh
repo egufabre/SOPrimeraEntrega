@@ -1,6 +1,9 @@
 #!/bin/bash
 #-------------------------- VARIABLES ------------------------------
 F=4
+FECHA=
+HORA=
+USUARIO=
 CantidadErrores=1
 #-------------------------------------------------------------------
 clear
@@ -18,7 +21,13 @@ then
         if sudo usermod -e $Expire $UserName
         then 
             echo "Cambio de fecha exitoso!"
-		F=3
+	
+   	 FECHA=$(date +'%A %d de %B de %Y')
+       	 HORA=$(date +%T)
+       	 USUARIO=$(whoami)
+	 echo "$USUARIO modifico el periodo de vencimiento del usuario $UserName el $FECHA a las $HORA hs" >> log.txt
+	    
+	    F=3
         else
             echo "Error cambiando fecha :("
 		CantidadErrores=$((CantidadErrores+1))

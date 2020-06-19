@@ -1,6 +1,9 @@
 #!/bin/bash
 #-------------------------- VARIABLES ------------------------------
 F=4
+FECHA=
+HORA=
+USUARIO=
 CantidadErrores=1
 #-------------------------------------------------------------------
 clear
@@ -19,6 +22,11 @@ then
             if sudo usermod -U $UserName
             then
                 echo "Usuario desbloqueado con exito!"
+		FECHA=$(date +'%A %d de %B de %Y')
+	        HORA=$(date +%T)
+	        USUARIO=$(whoami)
+		echo "$USUARIO  desbloqueo el usuario $UserName el $FECHA a las $HORA hs" >> log.txt
+
 		F=3
             else    
                 echo "Error al desbloquear al usuario :("

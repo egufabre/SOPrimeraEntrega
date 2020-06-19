@@ -6,7 +6,9 @@
 
 F=4
 CantidadErrores=1
-
+FECHA=$(date +'%A %d de %B de %Y')
+HORA=$(date +%T)
+USUARIO=$(whoami)
 
 
 
@@ -14,7 +16,7 @@ CantidadErrores=1
 
 # -------------------------------------------------------------------------- #
        
-
+echo "El usuario $USUARIO ingreso al Menu Principal el $FECHA a las $HORA hs" >> log.txt
 
 
 

@@ -1,6 +1,9 @@
 #!/bin/bash
 #-------------------------- VARIABLES ------------------------------
 F=4
+FECHA=
+HORA=
+USUARIO=
 CantidadErrores=1
 #-------------------------------------------------------------------
 clear
@@ -18,6 +21,11 @@ then
         if sudo usermod -c "$Comment" $UserName
         then
             echo "Modificacion exitosa!"
+	FECHA=$(date +'%A %d de %B de %Y')
+	HORA=$(date +%T)
+	USUARIO=$(whoami)
+echo "$USUARIO ingreso comentario en el usuario $UserName el $FECHA a las $HORA hs" >> log.txt
+
 		F=3
         else
             echo "Error agregando el comentario :("

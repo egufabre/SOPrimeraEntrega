@@ -2,6 +2,9 @@
 #-------------------------- VARIABLES ------------------------------
 F=4
 CantidadErrores=1
+FECHA=
+HORA=
+USUARIO=
 #-------------------------------------------------------------------
 clear
 echo -e "==================== BLOQUEAR USUARIO =================="
@@ -19,6 +22,11 @@ then
             if sudo usermod -L $UserName
             then
                 echo "Usuario bloqueado con exito!"
+		FECHA=$(date +'%A %d de %B de %Y')
+		HORA=$(date +%T)
+		USUARIO=$(whoami)
+		echo "$USUARIO bloqueo a $UserName el $FECHA a las $HORA hs" >> log.txt
+
 		F=3
             else    
                 echo "Error al bloquear al usuario :("

@@ -14,7 +14,7 @@ I=0
     echo "
         Bienvenido al menu de Usuarios
     "
-    sleep 2
+    sleep 1
 
     clear
     echo -e "=============== Menu Gestion de Usuario ====================="
@@ -48,7 +48,7 @@ I=0
            ./MenuPrincipal.sh
         ;;
         *)
-	echo -e "${ROJO}\t Opcion inválida! "
+	echo -e "\t Opcion inválida! "
 	sleep 1
 	 ./MenuUsuarios.sh
 	;;

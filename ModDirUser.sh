@@ -1,6 +1,9 @@
 #!/bin/bash
 #-------------------------- VARIABLES ------------------------------
 F=4
+FECHA=
+HORA=
+USUARIO=
 CantidadErrores=1
 #-------------------------------------------------------------------
 clear
@@ -18,7 +21,13 @@ then
         if sudo usermod -d $Directory $UserName
         then 
             echo "Cambio de directorio exitoso!"
-		F=3
+	
+	FECHA=$(date +'%A %d de %B de %Y')
+        HORA=$(date +%T)
+        USUARIO=$(whoami)
+	echo "$USUARIO modifico el directorio del usuario $UserName el $FECHA a las $HORA hs" >> log.txt
+
+    	    F=3
         else
             echo "Error cambiando de directorio :("
 		CantidadErrores=$((CantidadErrores+1))
