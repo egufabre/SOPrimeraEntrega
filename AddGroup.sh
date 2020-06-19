@@ -15,7 +15,7 @@ while [ "$F" -eq 4 ]
 do
 	echo -e "Ingrese el nombre del grupo que desea crear"
 	read NombreGrupo
-if grep -qwis $NombreGrupo /etc/group
+if  grep -qwis $NombreGrupo /etc/group
 then
 	echo "El grupo $NombreGrupo ya existe"
 	CantidadErrores=$((CantidadErrores+1))
@@ -24,7 +24,7 @@ then
 		clear
 		echo -e "Ha superado la cantidad de intentos permitidos"
 		sleep 2
-		exit
+		F=3				
 	fi
 
 
@@ -34,11 +34,11 @@ else
 
 	clear
 	echo -e""
-	echo -e "Grupo creado exitosamente"
+	echo -e "Grupo $NombreGrupo creado exitosamente"
 	sleep 2
 	F=3
 	fi
 done
-
+./MenuGrupo.sh
 
 

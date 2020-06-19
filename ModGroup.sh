@@ -37,10 +37,10 @@ else
                 clear
                 echo -e "Ha superado la cantidad de intentos permitidos"
                 sleep 2
-                exit
+                F=3
         fi
 fi
 
 done
-
+./MenuGrupo.sh
                                 

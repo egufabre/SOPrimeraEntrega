@@ -1,6 +1,19 @@
 #!/usr/bin/env bash
 
-  echo ""
+#-------------------------- VARIABLES ------------------------------
+
+
+F=4
+CantidadErrores=1
+
+
+#-------------------------------------------------------------------
+
+clear
+echo -e "==================== MENU GESTION DE GRUPO =================="
+
+
+echo ""
 
         echo -e "\t1) Ingresar nuevo grupo"
 
@@ -8,9 +21,7 @@
 
         echo -e "\t3) Eliminar grupo"
 
-        echo -e "\t4) Volver al menu principal"
-	
-	echo -e "\tQ) Salir"
+        echo -e "\tV) Volver al menu principal"
 
 	echo ""
 	echo -e "Ingrese una opcion: "
@@ -27,16 +38,13 @@
 		3)
 			./DelGroup.sh
 			;;
-		4)
+		v|V)
 			./MenuPrincipal.sh
 			;;
-		q|Q) exit
+			
+		*)	
+			echo -e "Opcion incorrecta!"
+			sleep 1
+                	./MenuGrupo.sh
 			;;
-		*)echo -e "Opcion incorrecta!"
-			echo""
 	esac
-
-
-
-
-
